@@ -681,3 +681,12 @@ ul.social-list li a:hover, ul.social-list li a:focus{
 	position: absolute;
 	right: 0;
 }
+.x {
+    display: flex;
+  }
+  .y {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-right: 10px; /* Optional: add some spacing between divisions */
+  }

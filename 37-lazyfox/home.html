@@ -1,0 +1,196 @@
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Image Classification</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="jumbotron bg-primary">Image Classfication</h1>
+  <br><br>
+  <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Upload Your Image :</label>
+      <div class="col-sm-10">          
+        <input type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
+      </div>
+    </div>
+
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+  </form>
+
+	{% if prediction %}
+  <img src="{{img_path}}" height="400px" width="400px">
+	<h2> Your Prediction   : <i> {{prediction}} </i></h2>
+
+	{% endif %}
+
+</div> -->
+
+
+
+
+
+
+<!-- 
+</body>
+</html>
+
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+   <head>
+     <!-- Required meta tags always come first -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta http-equiv="x-ua-compatible" content="ie=edge">
+ 
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+     <link rel="stylesheet" href="css/ionicons.min.css">
+     <link rel="stylesheet" href="css/owl.carousel.css">
+     <link rel="stylesheet" href="css/owl.theme.css">
+     <link rel="stylesheet" href="css/style.css">
+   </head>
+   <body>
+     <header id="home" class="gradient-violat">
+       <nav class="navbar navbar-default navbar-fixed-top">
+         <div class="container">
+         <!-- Brand and toggle get grouped for better mobile display -->
+           <div class="navbar-header">
+             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+             </button>
+             <a class="navbar-brand" href="#"><span class="logo-wraper logo-white">
+                 <img src="images/Logo.png" alt="">Signature Verification
+               </span></a>
+           </div>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav  navbar-right">
+      <li class="active"><a href="#home">Home <span class="sr-only">(current)</span></a></li>
+      <li><a href="#blog-card">About</a></li>
+      <li><a href="#introduction">Intro</a></li>
+      <li><a href="#feature">Product</a></li>
+      <li><a href="#newsletter">Contact</a></li>
+      <li><a href="#" class="btn btn-orange border-none btn-rounded-corner btn-navbar">Verify Your Image</a></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+  <hr class="navbar-divider">
+</div><!-- /.container-fluid -->
+</nav>
+</header>
+<section id="introduction" class="gradient-violat padding-top-90 home-slider">
+<div id="home-slider" class="owl-carousel">
+  <div>
+    <div class="sliding-card-with-bottom-image text-center padding-top-90">
+      <h2 class="cta-heading text-white">Lazy Fox HTML5 Landing page</h2>
+      <p class="text-white slider-para">Awesome Stylish Template Powered By THEMEWAGON</p>
+      <div class="cta-btn-group">
+        <a class="btn btn-orange border-none btn-rounded-corner" href="#">Download <span class="icon-on-button"><i class="ion-ios-cloud-download-outline"></i></span></a>
+        <a class="btn-video text-white" href="#"><span class="icon-rounded bordered-ios"><i class="ion-ios-play-outline"></i></span>watch tutorial</a>
+      </div>
+      <div class="image-container text-center sm-display-none">
+        <img class="img-responsive" src="images/mockuo2.png" alt="">
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="container">
+      <div class="row">
+        <div class="image-right-slide-bg clearfix" style="background-image:url(images/mockuo.png)">
+          <div class="col-md-12">
+            <h2 class="cta-heading text-white">Lazy Fox HTML5 Landing page</h2>
+            <p class="text-white slider-para">Smooth Scroll and Gradient style</p>
+            <div class="cta-btn-group">
+              <a class="btn btn-orange border-none btn-rounded-corner" href="#">Download <span class="icon-on-button"><i class="ion-ios-cloud-download-outline"></i></span></a>
+              <a class="btn btn-white border-none btn-rounded-corner" href="#">Live demo<span class="icon-on-button"><i class="ion-ios-arrow-thin-right"></i></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<section id="feature" class="padding-top-bottom-120 bg-image-fit-50" style="background:url(images/)">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="feature-wiget">
+          <div class="icon-wraper">
+            <i class="ion-settings"></i>
+          </div>
+          <div class="content">
+            <h4 class="bottom-line">Upload Your Image</h4>
+            <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
+
+              <div class="form-group">
+                <div class="col-sm-10">          
+                  <input type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
+                </div>
+              </div>
+            </form>
+         </div>
+         <div class="content">
+          <h4 class="bottom-line">Upload Reference Image</h4>
+          <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
+
+            <div class="form-group">
+              <div class="col-sm-10">          
+                <input type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
+              </div>
+            </div>
+        
+            <div class="form-group">        
+              <div class="col-sm-offset-0 col-sm-2">
+                <button type="submit" class="btn btn-success">Submit</button>
+              </div>
+            </div>
+          </form>
+       </div>
+        <div class="feature-wiget">
+          <div class="icon-wraper">
+            <i class="ion-calendar"></i>
+          </div>
+          <div class="content">
+            <h4 class="bottom-line">Your Image</h4>
+            {% if prediction %}
+            <img src="{{img_path}}" height="400px" width="400px">
+            {% endif %}
+          </div>
+        </div>
+        <div class="feature-wiget">
+          <div class="icon-wraper">
+            <i class="ion-ipad"></i>
+          </div>
+          <div class="content">
+            <h4 class="bottom-line">Reference Image</h4>
+            {% if prediction %}
+            <img src="{{img_path}}" height="400px" width="400px">
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<h5> Your Prediction   : <i> {{prediction}} </i></h5>
