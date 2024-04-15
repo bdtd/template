@@ -690,3 +690,30 @@ ul.social-list li a:hover, ul.social-list li a:focus{
     border: 1px solid #ccc;
     margin-right: 10px; /* Optional: add some spacing between divisions */
   }
+  
+  
+  
+ 
+  .bb {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Distribute space between items */
+    width: 100%; /* Ensure the container takes full width */
+    height: 100%; /* Make container take full viewport height */
+	
+  }
+  
+  .box {
+	
+     /* Each div takes equal space */
+    background-color: lightblue;
+    border: 5px solid #000;
+    text-align: center; /* Center text horizontally */
+    line-height: 100%; /* Center text vertically */
+  }
+  .style{
+	padding: 10px;
+  }
+  .side{
+	margin-left: 245px;
+  }
+  
