@@ -1,4 +1,3 @@
-
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,6 +65,7 @@
      <link rel="stylesheet" href="css/owl.carousel.css">
      <link rel="stylesheet" href="css/owl.theme.css">
      <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
    </head>
    <body>
      <header id="home" class="gradient-violat">
@@ -144,22 +144,60 @@
           <div class="content" class="box">
             
             <h4 class="bottom-line">Upload Your <br>Image</h4>
-            <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
-
-              <div class="form-group">
                 <div class="col-sm-10">          
-                  <input type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
+  <input type="file" id="fileUpload" accept="image/*">
+  <div id="overlay">
+    <div id="cropTool">
+      <img src="" id="imageToCrop" alt="Original image">
+      <div id="cropPreview"></div>
+      <button id="cropButton">Crop</button>
+      <button id="cancelButton">Cancel</button>
+    </div>
+  </div>
+  <div id="resultImages" style="display: none;">
+    <img src="" id="croppedImage" alt="Cropped image">
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+  <script>
+    document.getElementById('fileUpload').addEventListener('change', function(event) {
+      var file = event.target.files[0];
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        var image = document.getElementById('imageToCrop');
+        image.src = e.target.result;
+
+        var cropPreview = document.getElementById('cropPreview');
+        cropPreview.innerHTML = '';
+        cropPreview.appendChild(image);
+
+        var cropper = new Cropper(image, {
+          aspectRatio: 1, // You can change this ratio as needed
+          viewMode: 1,
+          autoCropArea: 1,
+        });
+
+        document.getElementById('cropButton').addEventListener('click', function() {
+          var croppedCanvas = cropper.getCroppedCanvas();
+          var croppedImage = document.getElementById('croppedImage');
+          croppedImage.src = croppedCanvas.toDataURL(); // Set cropped image src to data URI
+          document.getElementById('resultImages').style.display = 'block';
+          document.getElementById('overlay').style.display = 'none';
+          cropper.destroy();
+        });
+
+        // Show the overlay
+        document.getElementById('overlay').style.display = 'block';
+      };
+
+      reader.readAsDataURL(file);
+    });
+  </script>
                 </div>
               </div>
-              <div class="form-group">        
-                <div class="col-sm-offset-0 col-sm-2">
-                  <button type="submit" class="btn btn-success">Submit</button>
-                </div>
-              </div>
-            </form>
             
          </div>
-         </div>
+         
          <div class="feature-wiget" >
           <div class="icon-wraper">
             <i class="ion-settings"></i>
@@ -167,22 +205,60 @@
          <div class="content" class="box">
           
           <h4 class="bottom-line">Upload Reference <br>Image</h4>
-          <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
-        
-            <div class="form-group">
               <div class="col-sm-10">          
-                <input type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
+                <input type="file" id="fileUpload1" accept="image/*">
+  <div id="overlay1">
+    <div id="cropTool1">
+      <img src="" id="imageToCrop1" alt="Original image">
+      <div id="cropPreview1"></div>
+      <button id="cropButton1">Crop</button>
+      <button id="cancelButton1">Cancel</button>
+    </div>
+  </div>
+  <div id="resultImages1" style="display: none;">
+    <img src="" id="croppedImage1" alt="Cropped image">
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+  <script>
+    document.getElementById('fileUpload1').addEventListener('change', function(event) {
+      var file = event.target.files[0];
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        var image = document.getElementById('imageToCrop1');
+        image.src = e.target.result;
+
+        var cropPreview = document.getElementById('cropPreview1');
+        cropPreview.innerHTML = '';
+        cropPreview.appendChild(image);
+
+        var cropper = new Cropper(image, {
+          aspectRatio: 1, // You can change this ratio as needed
+          viewMode: 1,
+          autoCropArea: 1,
+        });
+
+        document.getElementById('cropButton1').addEventListener('click', function() {
+          var croppedCanvas = cropper.getCroppedCanvas();
+          var croppedImage = document.getElementById('croppedImage1');
+          croppedImage.src = croppedCanvas.toDataURL(); // Set cropped image src to data URI
+          document.getElementById('resultImages1').style.display = 'block';
+          document.getElementById('overlay1').style.display = 'none';
+          cropper.destroy();
+        });
+
+        // Show the overlay
+        document.getElementById('overlay1').style.display = 'block';
+      };
+
+      reader.readAsDataURL(file);
+    });
+  </script>
               </div>
             </div>
-            <div class="form-group">        
-              <div class="col-sm-offset-0 col-sm-2">
-                
-              </div>
-            </div>
-          </form>
+           
           </div>
           </div>
-        </div>
         <div class="bb">
           <div class="style">
         <div class="feature-wiget" class="box">
@@ -219,3 +295,4 @@
   </div>
   <h3 class="side"> Your Prediction   : <i> {{prediction}} </i></h3>
 </section>
+
